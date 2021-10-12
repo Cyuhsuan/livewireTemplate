@@ -16,13 +16,18 @@ class Modal extends Component
 
     public function openModal($dialog)
     {
-        $this->isOpen = true;
+        if (!$this->isOpen) {
+            $this->isOpen = true;
+        }
         $this->dialog = $dialog;
     }
 
     public function closeModal()
     {
-        $this->isOpen = false;
+        $this->reset([
+            'dialog',
+            'isOpen'
+        ]);
     }
 
     public function render()
