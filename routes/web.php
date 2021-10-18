@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Home;
+use App\Http\Livewire\Pages\Home;
 use App\Http\Livewire\Container;
+use App\Http\Livewire\IsLogin;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +16,8 @@ use App\Http\Livewire\Container;
 |
 */
 
-// Route::get('/', function () {
-//     return view('pages/index');
-// });
 Route::get('/', Home::class);
 Route::get('/container', Container::class);
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::get('/islogin', IsLogin::class);
+});

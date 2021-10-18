@@ -11,7 +11,7 @@
     @livewireStyles
 </head>
 
-<body class="relative min-h-screen">
+<body class="relative min-h-screen pb-8 text-gray-500">
     <livewire:header />
     {{ $slot }}
     <livewire:footer />
